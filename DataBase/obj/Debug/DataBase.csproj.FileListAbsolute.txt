@@ -1,0 +1,11 @@
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\bin\Debug\DataBase.dll.config
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\bin\Debug\DataBase.dll
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\bin\Debug\DataBase.pdb
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\bin\Debug\EntityFramework.dll
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\bin\Debug\EntityFramework.xml
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\obj\Debug\DataBase.csproj.CoreCompileInputs.cache
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\obj\Debug\DataBase.csproj.CopyComplete
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\obj\Debug\DataBase.dll
+C:\Users\Manuel\source\repos\ProbandoDB\DataBase\obj\Debug\DataBase.pdb

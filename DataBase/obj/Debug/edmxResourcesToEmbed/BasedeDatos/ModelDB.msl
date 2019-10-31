@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarniceriaModelStoreContainer" CdmEntityContainer="CarniceriaEntities">
+    <EntitySetMapping Name="Compras">
+      <EntityTypeMapping TypeName="CarniceriaModel.Compras">
+        <MappingFragment StoreEntitySet="Compras">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="ID_Compra" ColumnName="ID_Compra" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="FechaCompra" ColumnName="FechaCompra" />
+          <ScalarProperty Name="PrecioCompra" ColumnName="PrecioCompra" />
+          <ScalarProperty Name="ID_Prov" ColumnName="ID_Prov" />
+          <ScalarProperty Name="ID_Corte" ColumnName="ID_Corte" />
+          <ScalarProperty Name="Peso" ColumnName="Peso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cortes">
+      <EntityTypeMapping TypeName="CarniceriaModel.Cortes">
+        <MappingFragment StoreEntitySet="Cortes">
+          <ScalarProperty Name="ID_Corte" ColumnName="ID_Corte" />
+          <ScalarProperty Name="Corte" ColumnName="Corte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gastos">
+      <EntityTypeMapping TypeName="CarniceriaModel.Gastos">
+        <MappingFragment StoreEntitySet="Gastos">
+          <ScalarProperty Name="ID_Gasto" ColumnName="ID_Gasto" />
+          <ScalarProperty Name="FechaGasto" ColumnName="FechaGasto" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="ID_TG" ColumnName="ID_TG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="CarniceriaModel.Proveedores">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="ID_Prov" ColumnName="ID_Prov" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipodeGastos">
+      <EntityTypeMapping TypeName="CarniceriaModel.TipodeGastos">
+        <MappingFragment StoreEntitySet="TipodeGastos">
+          <ScalarProperty Name="ID_TG" ColumnName="ID_TG" />
+          <ScalarProperty Name="NombreGasto" ColumnName="NombreGasto" />
+          <ScalarProperty Name="DescripcionGasto" ColumnName="DescripcionGasto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="CarniceriaModel.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="ID_Venta" ColumnName="ID_Venta" />
+          <ScalarProperty Name="Cant_Ventas" ColumnName="Cant_Ventas" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Tot_Tarjeta" ColumnName="Tot_Tarjeta" />
+          <ScalarProperty Name="Tot_Venta" ColumnName="Tot_Venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

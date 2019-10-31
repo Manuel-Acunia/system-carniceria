@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarniceriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Compras">
+    <Key>
+      <PropertyRef Name="ID_Compra" />
+    </Key>
+    <Property Name="ID_Compra" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cantidad" Type="Byte" />
+    <Property Name="FechaCompra" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PrecioCompra" Type="Decimal" Precision="10" Scale="4" />
+    <Property Name="ID_Prov" Type="Byte" />
+    <Property Name="ID_Corte" Type="Byte" />
+    <Property Name="Peso" Type="Int16" />
+    <NavigationProperty Name="Cortes" Relationship="Self.FK__Compras__ID_Cort__74AE54BC" FromRole="Compras" ToRole="Cortes" />
+    <NavigationProperty Name="Proveedores" Relationship="Self.FK__Compras__ID_Prov__73BA3083" FromRole="Compras" ToRole="Proveedores" />
+    <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Cortes">
+    <Key>
+      <PropertyRef Name="ID_Corte" />
+    </Key>
+    <Property Name="ID_Corte" Type="Byte" Nullable="false" />
+    <Property Name="Corte" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Compras" Relationship="Self.FK__Compras__ID_Cort__74AE54BC" FromRole="Cortes" ToRole="Compras" />
+  </EntityType>
+  <EntityType Name="Gastos">
+    <Key>
+      <PropertyRef Name="ID_Gasto" />
+    </Key>
+    <Property Name="ID_Gasto" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaGasto" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Monto" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="ID_TG" Type="Byte" />
+    <NavigationProperty Name="TipodeGastos" Relationship="Self.FK__Gastos__ID_TG__797309D9" FromRole="Gastos" ToRole="TipodeGastos" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="ID_Prov" />
+    </Key>
+    <Property Name="ID_Prov" Type="Byte" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Compras" Relationship="Self.FK__Compras__ID_Prov__73BA3083" FromRole="Proveedores" ToRole="Compras" />
+  </EntityType>
+  <EntityType Name="TipodeGastos">
+    <Key>
+      <PropertyRef Name="ID_TG" />
+    </Key>
+    <Property Name="ID_TG" Type="Byte" Nullable="false" />
+    <Property Name="NombreGasto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DescripcionGasto" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Gastos" Relationship="Self.FK__Gastos__ID_TG__797309D9" FromRole="TipodeGastos" ToRole="Gastos" />
+  </EntityType>
+  <EntityType Name="Ventas">
+    <Key>
+      <PropertyRef Name="ID_Venta" />
+    </Key>
+    <Property Name="ID_Venta" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cant_Ventas" Type="Byte" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Tot_Tarjeta" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="Tot_Venta" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Compras__ID_Cort__74AE54BC">
+    <End Role="Cortes" Type="Self.Cortes" Multiplicity="0..1" />
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cortes">
+        <PropertyRef Name="ID_Corte" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="ID_Corte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compras__ID_Prov__73BA3083">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+    <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="ID_Prov" />
+      </Principal>
+      <Dependent Role="Compras">
+        <PropertyRef Name="ID_Prov" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Gastos__ID_TG__797309D9">
+    <End Role="TipodeGastos" Type="Self.TipodeGastos" Multiplicity="0..1" />
+    <End Role="Gastos" Type="Self.Gastos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipodeGastos">
+        <PropertyRef Name="ID_TG" />
+      </Principal>
+      <Dependent Role="Gastos">
+        <PropertyRef Name="ID_TG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarniceriaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Compras" EntityType="Self.Compras" />
+    <EntitySet Name="Cortes" EntityType="Self.Cortes" />
+    <EntitySet Name="Gastos" EntityType="Self.Gastos" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
+    <EntitySet Name="TipodeGastos" EntityType="Self.TipodeGastos" />
+    <EntitySet Name="Ventas" EntityType="Self.Ventas" />
+    <AssociationSet Name="FK__Compras__ID_Cort__74AE54BC" Association="Self.FK__Compras__ID_Cort__74AE54BC">
+      <End Role="Cortes" EntitySet="Cortes" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compras__ID_Prov__73BA3083" Association="Self.FK__Compras__ID_Prov__73BA3083">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Compras" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Gastos__ID_TG__797309D9" Association="Self.FK__Gastos__ID_TG__797309D9">
+      <End Role="TipodeGastos" EntitySet="TipodeGastos" />
+      <End Role="Gastos" EntitySet="Gastos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
