@@ -22,7 +22,7 @@ namespace Datos
         {
             txtVenta.Focus();
         }
-        //Probando git
+        //Probando git 2
 
         private void labelMayorVenta_Click(object sender, EventArgs e)
         {
